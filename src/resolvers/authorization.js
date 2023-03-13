@@ -4,7 +4,7 @@ import { combineResolvers, skip } from 'graphql-resolvers';
 export const isAuthenticated = (parent, args, { me }) =>
   me ? skip : new ForbiddenError('Not authenticated as user.');
 
-export const isProductOwner = combineResolvers(
+  export const isProductOwner = combineResolvers(
     isAuthenticated,
     async (parent, { id }, { Product, me }) => {
     const product = await Product.findByPk(id, { raw: true });

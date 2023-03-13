@@ -1,5 +1,5 @@
 import { models, sequelize }  from "./models/index.js";
-const { User, Message } = models;
+const { User } = models;
 
 const seedDatabase = async () => {
 
@@ -44,21 +44,12 @@ const seedDatabase = async () => {
     await User.bulkCreate(users);
    
 
-    // Create some messages
-    const messages = [
-      { text: 'Hello, world!', userId: 1 },
-      { text: 'How are you?', userId: 2 },
-      { text: 'Nice to meet you!', userId: 3 },
-    ];
-
-    await Message.bulkCreate(messages);
-
     console.log('Database seeded successfully!');
   } catch (error) {
     console.error('Unable to seed the database:', error);
   } finally {
     // Close the database connection when done
-    // await sequelize.close();
+    await sequelize.close();
   }
 };
 

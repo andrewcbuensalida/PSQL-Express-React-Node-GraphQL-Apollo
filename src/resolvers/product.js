@@ -99,12 +99,7 @@ export default {
             },
         ),
     },
-
-    // Product: {
-    //     owner: (product, args, { models }) => {
-    //         return models.users[product.userId];
-    //     },
-    // },
+    
     Product: {
         // user: async (product, args, { User }) => {
         //   return await User.findByPk(product.userId);

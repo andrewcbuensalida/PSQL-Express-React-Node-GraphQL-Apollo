@@ -2,30 +2,6 @@ import bcrypt from 'bcrypt';
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../db.js';
 
-// export const user = (sequelize, DataTypes) => {
-//     const User = sequelize.define("User", {
-//         firstName: {
-//           type: DataTypes.STRING,
-//         },
-//         lastName: {
-//           type: DataTypes.STRING,
-//         },
-//       },
-//       {
-//         timestamps: false,
-//       });
-
-//       User.findByLogin = async login => {
-//         let user = await User.findOne({
-//           where: { username: login },
-//         });
-//         return user;
-//       };
-
-//       return User;
-// };
-
-
 const User = sequelize.define('user', {
     firstName: {
         type: DataTypes.STRING,
@@ -65,20 +41,11 @@ const User = sequelize.define('user', {
 }, {
     timestamps: false
 });
-    
-    // productIds: {
-    //     type: DataTypes.ARRAY(DataTypes.INTEGER),
-    // },
-    // messageIds: {
-    //     type: DataTypes.ARRAY(DataTypes.INTEGER),
-    // },
-// });
 
 User.findByLogin = async login => {
     let user = await User.findOne({
         where: { email: login },
     });
-
 
     return user;
 };

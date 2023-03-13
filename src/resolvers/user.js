@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { AuthenticationError, UserInputError, ForbiddenError } from 'apollo-server';
+import { AuthenticationError, UserInputError } from 'apollo-server';
 import { combineResolvers } from 'graphql-resolvers';
 import { isAuthenticated } from './authorization.js';
 
@@ -12,12 +12,15 @@ const createToken = async (user, secret, expiresIn) => {
 
 export default {
     Query: {
-        me: async (parent, args, { User, me }) => {
+        me: combineResolvers(
+            isAuthenticated,
+            async (parent, args, { User, me }) => {
             if (!me) {
                 return null;
             }
             return await User.findByPk(me.id);
-        },
+            },
+        ),
         getUser: async (parent, { id }, { User }) => {
             return await User.findByPk(id);
         },
@@ -27,21 +30,9 @@ export default {
     },
 
     User: {
-        messages: async (user, args, { Message }) => {
-            return await Message.findAll({
-                where: {
-                    userId: user.id,
-                },
-            });
-        },
         products: async (user) => {
             return await user.getProducts();
         }
-        // products: (user, args, { models }) => {
-        //     return Object.values(models.products).filter(
-        //         product => product.userId == user.id,
-        //     );
-        // },
     },
 
     Mutation: {
