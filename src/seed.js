@@ -49,7 +49,7 @@ const seedDatabase = async () => {
     console.error('Unable to seed the database:', error);
   } finally {
     // Close the database connection when done
-    await sequelize.close();
+    // await sequelize.close();
   }
 };
 
