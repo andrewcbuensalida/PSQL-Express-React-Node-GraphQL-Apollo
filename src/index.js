@@ -60,9 +60,9 @@ sequelize.authenticate()
     return sequelize.sync({ force: true });
   })
   .then(() => {
-    console.log('User and Message tables created successfully.');
+    console.log('User and Product tables created successfully.');
 
-    // Seed the database with some users and messages
+    // Seed the database with some users
     return seedDatabase();
   })
   .then(() => {
