@@ -15,9 +15,6 @@ const seedDatabase = async () => {
             email: 'johndoe@gmail.com',
             password: 'abcd5678',
             role: 'USER',
-            username: 'John Doe', 
-            productIds: [1],
-            messageIds: [1], 
         },
         {
             firstName: 'James',
@@ -25,19 +22,13 @@ const seedDatabase = async () => {
             email: 'jamesjohnson@gmail.com',
             password: 'abcd5678',
             role: 'USER',
-            username: 'James Johnson',
-            productIds: [2],
-            messageIds: [2],  
         },
         {
             firstName: 'Ali',
             lastName: 'Raza',
             email: 'aliraza@gmail.com',
             password: 'abcd5678',
-            username: 'Ali Raza',
             role: 'ADMIN',
-            productIds: [3],
-            messageIds: [3],
         },
       ];
       
