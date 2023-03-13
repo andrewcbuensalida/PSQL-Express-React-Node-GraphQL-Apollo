@@ -29,7 +29,7 @@ const LoginPage = () => {
 
 return (
     <div>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h5" gutterBottom sx={{ m: 2 }}>
         Login
       </Typography>
       <LoginForm onSubmit={handleLogin} />

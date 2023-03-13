@@ -1,6 +1,8 @@
 import { useQuery, gql } from '@apollo/client';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material/';
 import Login from './Login';
+import { Container } from '@mui/material/';
+import Typography from '@mui/material/Typography';
 import GET_ALL_USERS from './queries/getAllUsers';
 
 function App() {
@@ -12,9 +14,11 @@ function App() {
 
 
   return (
-    <div>
+    <Container>
       <Login />
-    
+      <Typography variant="h5" gutterBottom sx={{ m: 2 }}>
+        List of Users
+      </Typography>
     <TableContainer component={Paper}>
       <Table>
         <TableHead>
@@ -39,7 +43,7 @@ function App() {
         </TableBody>
       </Table>
     </TableContainer>
-    </div>
+    </Container>
   );
 }
 
