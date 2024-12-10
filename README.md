@@ -10,7 +10,7 @@ To get started with this project, follow these steps:
    `git clone https://github.com/imraza/PSQL-Express-React-Node-GraphQL-Apollo.git`
 
 2. Install the project dependencies:
-   `npm install`
+   `npm ci`
 
 3. Create a `.env` file at the root of the project directory and set the environment variables needed for the project. These are:
    `DATABASE`
