@@ -15,7 +15,6 @@ export default {
       return await Product.findByPk(id)
     },
     getAllProducts: async (parent, args, { Product }) => {
-      console.log('hello')
       return await Product.findAll()
     },
   },
