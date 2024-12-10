@@ -9,6 +9,9 @@ To get started with this project, follow these steps:
 
 Go to https://main.d270tnz1kj6wbf.amplifyapp.com/
 
+Log in with Email: johndoe@gmail.com
+and password: abcd5678
+
 OR
 
 To run it locally:
