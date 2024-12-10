@@ -70,6 +70,8 @@ sequelize
     console.error('Unable to connect to the database:', error)
   })
 
-app.listen({ port: 4000 }, () => {
-  console.log('Server is running on http://localhost:4000/graphql')
+app.listen({ port: process.env.PORT || 4000 }, () => {
+  console.log(
+    `Server is running on http://localhost:${process.env.PORT}/graphql`
+  )
 })
