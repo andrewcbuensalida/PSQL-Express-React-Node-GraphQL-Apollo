@@ -4,7 +4,7 @@
   "description": "A full stack project that uses the PERN (PostgreSQL, Express, React, Node) stack, along with GraphQL and Apollo",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
